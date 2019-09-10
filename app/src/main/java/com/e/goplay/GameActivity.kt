@@ -23,7 +23,7 @@ class GameActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_users)
+        setContentView(R.layout.activity_login)
 
      /*   val call =  RetrofitInitializer().gameService().list()
 
