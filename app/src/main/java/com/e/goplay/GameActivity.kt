@@ -32,7 +32,7 @@ class GameActivity : AppCompatActivity() {
                                     response: Response<List<Game>?>?) {
                 response?.body()?.let {
                     val games: List<Game> = it
-                    println("Hueeeeeeeeeeeeee")
+                    println("H")
                     println(games)
                 }
             }

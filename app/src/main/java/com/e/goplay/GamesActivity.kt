@@ -10,6 +10,7 @@ import com.e.goplay.model.Place
 
 import kotlinx.android.synthetic.main.activity_games.*
 import kotlinx.android.synthetic.main.content_games.*
+import kotlinx.android.synthetic.main.custom_list.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -19,6 +20,26 @@ class GamesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_games)
         setSupportActionBar(toolbar)
+
+        val language = arrayOf<String>("Amistoso","Jogo Treino","Casual","Jogo Integração","Copa Society","Copa Futsal","Campeonato Suiço","Amistoso","Treino")
+        val description = arrayOf<String>(
+            "Buscando Time Adversario Para amistoso society",
+            "Jogo Treino entre Software x KMM",
+            "Procuando jogadores para uma partida",
+            "Jogo premissorio atrás de pessoas para compor um time",
+            "Copa de Agro:" +
+                    "Premiação:......",
+            "Copa Castro" +
+                    "Inscrições Limitadas: 8 Equipes",
+            "Inscrições Ilimitadas:" +
+                    "Requisitos:......",
+            "Procuando time adversario para amistoso futsal",
+            "Treino de Equipe")
+
+
+        val imageId = arrayOf<Int>(
+
+        )
 
         val local = Place("Avenida 11 de Outubro")
 
@@ -32,10 +53,14 @@ class GamesActivity : AppCompatActivity() {
 
 
         val lv = findViewById<ListView>(R.id.listView_games)
+
         val prodAdapter = ArrayAdapter<Game>(this,
             android.R.layout.simple_list_item_1, listaJogo)
 
-        lv.adapter = prodAdapter
+        val myListAdapter = MyListAdapter(this,language,description,imageId)
+        lv.adapter = myListAdapter
+
+    //    lv.adapter = prodAdapter
 
         fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
