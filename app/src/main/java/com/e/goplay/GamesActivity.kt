@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.custom_list.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class GamesActivity : AppCompatActivity() {
+open class GamesActivity : AppCompatActivity() {
     private val notes: MutableList<Note> = mutableListOf()
 
 
@@ -31,10 +31,25 @@ class GamesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_games)
-        setSupportActionBar(toolbar)
+
+        var game :Game
+        game = (Game("01","Jogo Treino","partida com intuito de treinar a equipe para o campeonato"))
+        val listGame :  MutableList<Game> = mutableListOf()
+        listGame.add(game)
+        game = (Game("02","Jogo Integração","partida casual, com churrasco pós jogo"))
+        listGame.add(game)
+        game = (Game("03","Amistoso","procurando time adversario para partida"))
+        listGame.add(game)
+        var lista : MutableList<String> = mutableListOf()
+        var lista2 : MutableList<String> = mutableListOf()
+        lista.add(listGame[0].tipoJogo)
+        lista2.add(listGame[0].description)
+        lista.add(listGame[1].tipoJogo)
+        lista2.add(listGame[1].description)
 
 
-
+        lista.add(listGame[2].tipoJogo)
+        lista2.add(listGame[2].description)
         val language = arrayOf<String>("Amistoso","Jogo Treino","Casual","Jogo Integração","Copa Society","Copa Futsal","Campeonato Suiço","Amistoso","Treino")
         val description = arrayOf<String>(
             "Buscando Time Adversario Para amistoso society",
@@ -51,23 +66,13 @@ class GamesActivity : AppCompatActivity() {
             "Treino de Equipe")
 
 
-        val local = Place("Avenida 11 de Outubro")
-
-        val jogo = Game("01", local, "Amistoso")
-        val jogo2 = Game("01", local, "Amistoso")
-        val jogo3 = Game("01", local, "Amistoso")
-        val jogo4 = Game("01", local, "Amistoso")
-        val jogo5 = Game("01", local, "Amistoso")
-        val jogo6 = Game("01", local, "Amistoso")
-        var listaJogo = listOf(jogo,jogo2,jogo3,jogo4,jogo5,jogo6)
-
-
         val lv = findViewById<ListView>(R.id.listView_games)
 
-        val prodAdapter = ArrayAdapter<Game>(this,
-            android.R.layout.simple_list_item_1, listaJogo)
+      //  val myListAdapter = MyListAdapter(this,language,description)
 
-        val myListAdapter = MyListAdapter(this,language,description)
+
+        val myListAdapter = MyListAdapter(this,lista,lista2)
+
         lv.adapter = myListAdapter
 
     //    lv.adapter = prodAdapter
@@ -77,7 +82,14 @@ class GamesActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        fun addGame(game : Game){
+            lista.add(game.tipoJogo)
+            lista2.add(game.description)
+            val myListAdapter = MyListAdapter(this,lista,lista2)
+            lv.adapter = myListAdapter
+        }
         fab.setOnClickListener {
+
             val intent = Intent(this, NewGame::class.java)
             startActivity(intent)
         }
