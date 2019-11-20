@@ -1,6 +1,7 @@
 package com.e.goplay
 
 import com.e.goplay.service.GameService
+import com.e.goplay.service.NoteService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -10,5 +11,5 @@ class RetrofitInitializer {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun gameService() = retrofit.create(GameService::class.java)
+    fun noteService() = retrofit.create(NoteService::class.java)
     }
