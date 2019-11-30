@@ -6,35 +6,61 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".EntraGameActivity">
+    <ImageView
+            android:layout_width="200dp"
+            android:layout_height="147dp" app:srcCompat="@mipmap/ic_quadra_futsal"
+            android:id="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="35dp" android:layout_marginBottom="33dp"
+            app:layout_constraintBottom_toTopOf="@+id/textViewQntdJoga" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"/>
+
 
     <TextView
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:id="@+id/textViewQntdJoga" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="244dp"
-            android:layout_marginLeft="112dp" android:layout_marginStart="112dp" android:text="Local"
-            android:textSize="24sp"/>
-    <TextView
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:id="@+id/textViewQntdJoga3" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="176dp"
-            android:layout_marginLeft="112dp" android:layout_marginStart="112dp" android:text="Amistoso"
-            android:textSize="24sp"/>
+            android:layout_width="218dp"
+            android:layout_height="0dp"
+            android:id="@+id/textViewDescription"
+            android:text="Descrição"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="63dp"
+            android:layout_marginStart="63dp" app:layout_constraintTop_toBottomOf="@+id/textViewLocal"
+            android:layout_marginBottom="74dp" app:layout_constraintBottom_toTopOf="@+id/buttonpt"/>
     <TextView
             android:layout_width="159dp"
             android:layout_height="0dp"
-            android:id="@+id/textViewQntdJoga2" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="108dp"
-            android:layout_marginLeft="116dp" android:layout_marginStart="116dp" android:text="8/10"
-            android:textSize="30sp" android:layout_marginBottom="449dp"
-            app:layout_constraintBottom_toTopOf="@+id/buttonpt"/>
+            android:id="@+id/textViewLocal"
+            android:text="Local:"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTipodeJogo" android:layout_marginBottom="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewDescription"
+            app:layout_constraintBottom_toTopOf="@+id/textViewDescription" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="63dp" android:layout_marginStart="63dp" android:layout_marginEnd="59dp"
+            android:layout_marginRight="59dp"/>
+    <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/textViewTipodeJogo"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewQntdJoga" android:layout_marginBottom="29dp"
+            app:layout_constraintEnd_toEndOf="@+id/textViewLocal"
+            app:layout_constraintBottom_toTopOf="@+id/textViewLocal"
+            app:layout_constraintStart_toStartOf="@+id/textViewQntdJoga" android:text="Tipo de Jogo:    Amistoso"/>
+    <TextView
+            android:layout_width="106dp"
+            android:layout_height="0dp"
+            android:id="@+id/textViewQntdJoga"
+            android:text="Vagas:  9/10"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="63dp"
+            android:layout_marginStart="63dp" app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:layout_marginBottom="18dp" app:layout_constraintBottom_toTopOf="@+id/textViewTipodeJogo"/>
     <Button
             android:text="Participar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/buttonpt"
-            app:layout_constraintTop_toBottomOf="@+id/textViewQntdJoga2" android:layout_marginBottom="91dp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" android:layout_marginBottom="64dp"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

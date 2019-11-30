@@ -15,5 +15,9 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, GamesActivity::class.java)
         btn_login.setOnClickListener{  startActivity(intent)}
 
+        btn_cadastro.setOnClickListener{
+            val intent = Intent(this, CadastroActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

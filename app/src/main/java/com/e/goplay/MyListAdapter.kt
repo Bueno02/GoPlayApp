@@ -7,8 +7,8 @@ import android.widget.*
 import com.e.goplay.model.Game
 
 
-class MyListAdapter(private val context: Activity, private val title:MutableList<String>, private val description: MutableList<String>)
-    : ArrayAdapter<String>(context, R.layout.custom_list, title) {
+class MyListAdapter(private val context: Activity,private val game:MutableList<Game>)
+    : ArrayAdapter<Game>(context, R.layout.custom_list,game) {
 
 
     override fun getView(position: Int, view: View?, parent: ViewGroup): View {
@@ -21,14 +21,14 @@ class MyListAdapter(private val context: Activity, private val title:MutableList
       //  val imageView = rowView.findViewById(R.id.icon) as ImageView
         val subtitleText = rowView.findViewById(R.id.description) as TextView
 
-        titleText.text = title[position]
+        titleText.text = game[position].tipoJogo
 //        imageView.setImageResource(imgid[position])
-        subtitleText.text = description[position]
+        subtitleText.text = game[position].horario
 
         return rowView
     }
 
-     fun getItemAtPosition(position: Int){
-
+    fun getItemAtPosition(position: Int) : Game{
+        return game[position]
     }
 }

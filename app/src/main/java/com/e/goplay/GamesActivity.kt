@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -32,24 +33,31 @@ open class GamesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_games)
 
-        var game :Game
-        game = (Game("01","Jogo Treino","partida com intuito de treinar a equipe para o campeonato"))
+        userbt.setOnClickListener{
+            val intent = Intent(this, UserInfo::class.java)
+            startActivity(intent)
+        }
         val listGame :  MutableList<Game> = mutableListOf()
+        var game :Game = Game("","","","","",0)
+        var game2 :Game = Game("","","","","",0)
+        game.tipoJogo= "Amistoso"
+        game.description = "Procura-se Equipe adversaria para amistoso"
+        game.horario = "18:00 h"
         listGame.add(game)
-        game = (Game("02","Jogo Integração","partida casual, com churrasco pós jogo"))
-        listGame.add(game)
-        game = (Game("03","Amistoso","procurando time adversario para partida"))
-        listGame.add(game)
+        game2.tipoJogo= "Treino"
+        game2.description = "Procura-se Equipe adversaria para amistoso"
+        game2.horario = "14:00 h"
+        listGame.add(game2)
         var lista : MutableList<String> = mutableListOf()
-        var lista2 : MutableList<String> = mutableListOf()
+     //   var lista2 : MutableList<String> = mutableListOf()
         lista.add(listGame[0].tipoJogo)
-        lista2.add(listGame[0].description)
-        lista.add(listGame[1].tipoJogo)
-        lista2.add(listGame[1].description)
+     //   lista2.add(listGame[0].description)
+       lista.add(listGame[1].tipoJogo)
+   //     lista2.add(listGame[1].description)
 
 
-        lista.add(listGame[2].tipoJogo)
-        lista2.add(listGame[2].description)
+      //  lista.add(listGame[2].tipoJogo)
+     //   lista2.add(listGame[2].description)
         val language = arrayOf<String>("Amistoso","Jogo Treino","Casual","Jogo Integração","Copa Society","Copa Futsal","Campeonato Suiço","Amistoso","Treino")
         val description = arrayOf<String>(
             "Buscando Time Adversario Para amistoso society",
@@ -71,21 +79,22 @@ open class GamesActivity : AppCompatActivity() {
       //  val myListAdapter = MyListAdapter(this,language,description)
 
 
-        val myListAdapter = MyListAdapter(this,lista,lista2)
+        val myListAdapter = MyListAdapter(this,listGame)
 
         lv.adapter = myListAdapter
 
     //    lv.adapter = prodAdapter
         lv.setOnItemClickListener { parent, view, position, id ->
-            val element = myListAdapter.getItemAtPosition(position) // The item that was clicked
+            val caradavez = myListAdapter.getItemAtPosition(position)
+            Toast.makeText( application,caradavez.description, Toast.LENGTH_LONG).show()
             val intent = Intent(this, EntraGameActivity::class.java)
+            intent.putExtra("desc", caradavez.description);
             startActivity(intent)
         }
 
         fun addGame(game : Game){
-            lista.add(game.tipoJogo)
-            lista2.add(game.description)
-            val myListAdapter = MyListAdapter(this,lista,lista2)
+
+            val myListAdapter = MyListAdapter(this,listGame)
             lv.adapter = myListAdapter
         }
         fab.setOnClickListener {
@@ -94,5 +103,8 @@ open class GamesActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
-
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
+    }
 }

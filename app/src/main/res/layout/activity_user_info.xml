@@ -8,64 +8,56 @@
         tools:context=".LoginActivity" android:background="#DCFFFFFF">
 
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            app:srcCompat="@mipmap/ic_launcher_round"
-            android:contentDescription="@string/nav_header_desc"
-            android:id="@+id/imageView" tools:srcCompat="@tools:sample/avatars"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="60dp" android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="0.498"/>
+            android:layout_width="197dp"
+            android:layout_height="0dp"
+            android:id="@+id/imageView"
+            app:srcCompat="@mipmap/ic_biri_round"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintBottom_toTopOf="@+id/textView_nome"
+            android:layout_marginBottom="48dp" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="57dp"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="@string/nav_header_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:id="@+id/textView_nome"
-            tools:text="31 Anos"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="120dp"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="0.498"/>
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:id="@+id/textView_idade"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/textView_nome"
+            android:layout_marginBottom="51dp" app:layout_constraintBottom_toTopOf="@+id/textView_posicao"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="@string/nav_header_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:id="@+id/textView_nome3"
-            tools:text="Avaliação: 7/10"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="272dp"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-            app:layout_constraintHorizontal_bias="0.494"/>
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:id="@+id/textView_avalicao"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_posicao" android:layout_marginBottom="145dp"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="@string/nav_header_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:id="@+id/textView_nome4"
-            tools:text="Volante/Zagueiro"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="200dp"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"
-    />
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:id="@+id/textView_posicao"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp" app:layout_constraintTop_toBottomOf="@+id/textView_idade"
+            android:layout_marginBottom="74dp" app:layout_constraintBottom_toTopOf="@+id/textView_avalicao"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingTop="@dimen/nav_header_vertical_spacing"
-            android:text="@string/nav_header_title"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1" android:id="@+id/textView_nome2"
-            tools:text="Pedro Chulapa"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="36dp"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp"/>
+
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" android:id="@+id/textView_nome"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" android:layout_marginBottom="52dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView_idade"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
