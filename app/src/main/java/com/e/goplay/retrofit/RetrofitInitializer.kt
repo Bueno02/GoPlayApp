@@ -1,15 +1,16 @@
-package com.e.goplay
+package com.e.goplay.retrofit
 
 import com.e.goplay.service.GameService
-import com.e.goplay.service.NoteService
+import com.e.goplay.service.UserService
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class RetrofitInitializer {
     private val retrofit = Retrofit.Builder()
-        .baseUrl("http://192.168.56.1:3000/")
+        .baseUrl("http://apigamego.herokuapp.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
-    fun noteService() = retrofit.create(NoteService::class.java)
+    fun gameService() = retrofit.create(GameService::class.java)
+    fun userService() = retrofit.create(UserService::class.java)
     }

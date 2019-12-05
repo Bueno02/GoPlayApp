@@ -1,10 +1,16 @@
 package com.e.goplay.model
 
-class User (var id : String,
-            var nome : String,
-            var idade : String,
-            var posicao : String,
-            var avalicao : String,
-            var email : String){
+import java.io.Serializable
+
+data class User constructor (var id : Int = 0,
+            var nome : String ="",
+            var email : String="",
+            var senha : String="",
+            var idade : Int=0,
+            var posicao : String="",
+            var posicao2 : String="",
+            var avalicao : Int=0
+            ):Serializable
+{constructor() : this (0, "","","",0,"","",0)
 
 }

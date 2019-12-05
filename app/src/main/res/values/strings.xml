@@ -24,4 +24,22 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string-array name="lista_tipoJogo">
+        <item>Amistoso</item>
+        <item>Treino</item>
+        <item>Casual</item>
+        <item>Jogo Integração</item>
+    </string-array>
+    <string-array name="lista_posicoes">
+        <item>Goleiro</item>
+        <item>Zagueiro</item>
+        <item>Lateral</item>
+        <item>Volante</item>
+        <item>Meio-Campo</item>
+        <item>Atacante</item>
+        <item>Fixo</item>
+        <item>Ala</item>
+        <item>Pivo</item>
+        <item></item>
+    </string-array>
 </resources>

@@ -1,4 +1,4 @@
-package com.e.goplay
+package com.e.goplay.retrofit
 
 import retrofit2.Call
 import retrofit2.Callback
@@ -12,6 +12,7 @@ fun <T> callback(response: (response: Response<T>?) -> Unit,
         }
 
         override fun onFailure(call: Call<T>?, t: Throwable?) {
+            println(t)
             failure(t)
         }
     }

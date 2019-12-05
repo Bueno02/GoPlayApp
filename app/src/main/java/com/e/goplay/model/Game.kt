@@ -1,14 +1,17 @@
 package com.e.goplay.model
 
-import java.time.LocalDateTime
+import java.io.Serializable
 
 
-class Game(var _id: String,
-        //   val local: Place,
-           var local : String,
-           var tipoJogo: String,
-           var description: String,
-           var horario : String,
-           var qntdJogadores : Int
-         //  var jogadores : MutableList<User>
-        )
+
+data class Game constructor(var id : Int = 0,
+      //     val local: Place,
+           var tipoJogo: String ="",
+           var local : String ="",
+           var horario: String="",
+           var description: String="",
+           var qntdJogadores : Int = 0,
+           var jogadores : MutableList<User> = mutableListOf()
+        ):Serializable{
+    constructor() : this(0,"","","","",0, mutableListOf())
+}

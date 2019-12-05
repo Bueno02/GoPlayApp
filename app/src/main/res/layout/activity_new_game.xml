@@ -7,63 +7,63 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".NewGame" android:background="#DC00AAD4">
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:hint="Tipo de Jogo"
-            android:ems="10"
-            android:id="@+id/editText1"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="60dp" app:layout_constraintEnd_toEndOf="parent"/>
 
 
     <EditText
-            android:layout_width="209dp"
-            android:layout_height="43dp"
-            android:inputType="textPersonName"
+            android:layout_width="213dp"
+            android:layout_height="93dp"
+            android:inputType="text"
             android:hint="Descrição"
             android:ems="10"
-            android:id="@+id/editText2"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginRight="8dp" android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
-            android:layout_marginTop="36dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText3"/>
+            android:id="@+id/editTextDesc"
+            app:layout_constraintTop_toBottomOf="@+id/editTextHorario" android:layout_marginBottom="59dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/buttonCriar"
+            app:layout_constraintStart_toStartOf="parent"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:hint="Horario"
             android:ems="10"
-            android:id="@+id/editText3"
-            app:layout_constraintStart_toStartOf="@+id/editText5" android:layout_marginTop="32dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText5"/>
+            android:id="@+id/editTextHorario"
+            app:layout_constraintStart_toStartOf="@+id/editTextQtJog"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQtJog" android:layout_marginBottom="44dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextDesc"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:hint="Local"
             android:ems="10"
-            android:id="@+id/editText4"
-            app:layout_constraintStart_toStartOf="@+id/editText1" android:layout_marginTop="44dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText1"/>
+            android:id="@+id/editTextLocal"
+            app:layout_constraintTop_toBottomOf="@+id/spinnerTipoJogo" android:layout_marginBottom="30dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toTopOf="@+id/editTextQtJog"
+            app:layout_constraintStart_toStartOf="parent"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:hint="Quantidade Jogadores"
             android:ems="10"
-            android:id="@+id/editText5"
-            app:layout_constraintStart_toStartOf="@+id/editText4" android:layout_marginTop="38dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText4"/>
+            android:id="@+id/editTextQtJog"
+            app:layout_constraintStart_toStartOf="@+id/editTextLocal"
+            app:layout_constraintTop_toBottomOf="@+id/editTextLocal" android:layout_marginBottom="34dp"
+            app:layout_constraintBottom_toTopOf="@+id/editTextHorario"/>
     <Button
             android:text="Criar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/buttonCriaJogo"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="@+id/editText2" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            android:id="@+id/buttonCriar"
+            app:layout_constraintTop_toBottomOf="@+id/editTextDesc" android:layout_marginBottom="73dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <Spinner
+            android:layout_width="293dp"
+            android:layout_height="50dp"
+            android:id="@+id/spinnerTipoJogo"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="59dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/editTextLocal" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="46dp"
+            android:layout_marginStart="46dp" android:layout_marginEnd="46dp" android:layout_marginRight="46dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
