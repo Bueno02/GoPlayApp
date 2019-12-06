@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lista_tipoJogo">
+        <item>Amistoso</item>
+        <item>Treino</item>
+        <item>Casual</item>
+        <item>Jogo Integração</item>
+    </string-array>
+    <string-array name="lista_posicoes">
+        <item>Goleiro</item>
+        <item>Zagueiro</item>
+        <item>Lateral</item>
+        <item>Volante</item>
+        <item>Meio-Campo</item>
+        <item>Atacante</item>
+        <item>Fixo</item>
+        <item>Ala</item>
+        <item>Pivo</item>
+    </string-array>
+</resources>

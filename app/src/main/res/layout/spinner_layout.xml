@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:Android="http://schemas.android.com/apk/res/android"
+          Android:id="@+id/spinnerTarget"
+          Android:layout_width="fill_parent"
+          Android:layout_height="wrap_content"
+          Android:textSize="18sp"
+          Android:lineSpacingExtra="12sp"
+          Android:layout_marginLeft="8dp"
+          Android:layout_marginStart="8dp"
+          Android:background="@drawable/drawable_edit_white_round"
+          Android:textColor="@color/colorPrimaryDark"
+          Android:paddingLeft="16dp" Android:text="teste"/>

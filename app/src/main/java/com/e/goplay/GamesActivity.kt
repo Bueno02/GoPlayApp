@@ -45,6 +45,7 @@ open class GamesActivity : AppCompatActivity() {
         lv.setOnItemClickListener { parent, view, position, id ->
             val caradavez = myListAdapter.getItemAtPosition(position)
             val intent = Intent(this, EntraGameActivity::class.java)
+            intent.putExtra("user",user)
             intent.putExtra("game",caradavez)
             startActivity(intent)
         }

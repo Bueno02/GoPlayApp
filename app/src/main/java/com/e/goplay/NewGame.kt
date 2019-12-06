@@ -8,19 +8,22 @@ import com.e.goplay.model.Game
 import com.e.goplay.retrofit.GameWebClient
 import kotlinx.android.synthetic.main.activity_new_game.*
 
+
+
 class NewGame : AppCompatActivity()  {
 
 
     var valida = false
     val game = Game()
-    var lstTp = arrayOf("Amistoso","Treino")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new_game)
 
 
-        spinnerTipoJogo.setAdapter(ArrayAdapter(application,android.R.layout.simple_spinner_item,lstTp))
-
+        val gameadapter = ArrayAdapter.createFromResource(
+            this, R.array.lista_tipoJogo, R.layout.spinner_layout)
+        gameadapter.setDropDownViewResource(R.layout.spinner_layout)
+        spinnerTipoJogo.setAdapter(gameadapter)
 
 
         buttonCriar.setOnClickListener{
@@ -29,7 +32,7 @@ class NewGame : AppCompatActivity()  {
             }
         }
     fun add(created: (createdGame: Game) -> Unit) {
-        game.tipoJogo = lstTp[spinnerTipoJogo.selectedItemPosition]
+        game.tipoJogo = spinnerTipoJogo.selectedItem as String
         game.local = editTextLocal.text.toString()
         game.qntdJogadores =( editTextQtJog.text.toString().toInt())
         game.horario = editTextHorario.text.toString()
