@@ -18,7 +18,7 @@ class MyListAdapter(private val context: Activity,private val game:MutableList<G
         val rowView = inflater.inflate(R.layout.custom_list, null, true)
 
         val titleText = rowView.findViewById(R.id.title) as TextView
-      //  val imageView = rowView.findViewById(R.id.icon) as ImageView
+       // val imageView = rowView.findViewById(R.drawable) as ImageView
         val subtitleText = rowView.findViewById(R.id.nome) as TextView
 
         titleText.text = game[position].tipoJogo

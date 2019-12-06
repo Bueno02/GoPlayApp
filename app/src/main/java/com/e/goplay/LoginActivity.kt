@@ -32,6 +32,7 @@ class LoginActivity : AppCompatActivity() {
                     val intent = Intent(this, GamesActivity::class.java)
                     intent.putExtra("usuario",user)
                     startActivity(intent)
+                    finish()
                 }else {
                     Toast.makeText(application, "Usuario ou Senha Incorretos", Toast.LENGTH_LONG).show()
                 }

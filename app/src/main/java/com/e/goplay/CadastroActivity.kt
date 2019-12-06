@@ -2,6 +2,9 @@ package com.e.goplay
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Patterns
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.e.goplay.model.User
@@ -23,14 +26,27 @@ class CadastroActivity : AppCompatActivity() {
         spinnerPos1.setAdapter(gameadapter)
         spinnerPos2.setAdapter(gameadapter)
 
+
+
+
+
         buttonCriar.setOnClickListener{
-            if(editTextConfirmaSenha.text.toString()==editTextSenha.text.toString())
-            add {user}
-            else{
-                Toast.makeText(application, "Senhas não Conferem", Toast.LENGTH_LONG).show()
+            if( editTextEmail.text.isNotEmpty()
+                && Patterns.EMAIL_ADDRESS.matcher( editTextEmail.text).matches()!=true ) {
+                Toast.makeText(application, "Informe um E-mail Válido", Toast.LENGTH_LONG).show()
+            } else
+             if(editTextNome.text.isEmpty()||editTextIdade.text.isEmpty()||
+                 editTextSenha.text.isEmpty()||editTextConfirmaSenha
+                     .text.isEmpty()){
+                Toast.makeText(application, "Preencha Todos os Campos", Toast.LENGTH_LONG).show()
+            }
+           else{ if(editTextConfirmaSenha.text.toString()==editTextSenha.text.toString()) {
+                 add { user }
+             } else Toast.makeText(application, "Senhas não Conferem", Toast.LENGTH_LONG).show()
             }
         }
     }
+
     fun add(created: (createdUser: User) -> Unit) {
         user.nome=editTextNome.text.toString()
         user.posicao=spinnerPos1.selectedItem as String

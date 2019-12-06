@@ -41,6 +41,7 @@ class EntraGameActivity : AppCompatActivity() {
             }
         else{
                 Toast.makeText(application, "Validando", Toast.LENGTH_LONG).show()
+
             game.jogadores.add(user)
             alter(game){}
         }
@@ -48,7 +49,7 @@ class EntraGameActivity : AppCompatActivity() {
     }
         fun alter(game: Game, altered: (alteredGame: Game) -> Unit) {
             GameWebClient().alter(game, {
-                finish()
+               // finish()
             }, {
                 Toast.makeText(application, "Falha na Inscrição", Toast.LENGTH_LONG).show()
             })
